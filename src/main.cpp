@@ -9,7 +9,8 @@
 #include <sstream>
 #include <csignal>
 #include <iostream>
-#include "Pwm.h"
+#include "Adc.h"
+#include <cstdlib>
 
 namespace po = boost::program_options;
 
@@ -55,21 +56,42 @@ int main(int argc, char *argv[]) {
     // Keep running until CTRL-C issued
     size_t count = 0;
 
+/*Handling global setup for the kernel - MUST BE RUN" */
+
+    int ret = std::system("../libs/INIT/INIT");  // Runs the INIT program
+    if (ret != 0) {
+        std::cout << "Couldn't find initialization for this kernel instance; please ensure it exists" << std::endl;
+    }
+
+    
 
 
-    PWM& pwm = PWM::getInstance();
+
+
     while(not stop_signal_called)
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(1)); // sleep for 1ms to make sure can catch CTRL-C
         count++;
         if(count % 3000 == 0)
         {
+                /*pwm.enable();
                 std::cout << "Motor 1:\t" <<  motor_1 << std::endl;
                 std::cout << "Motor 2:\t" <<  motor_2 << std::endl;
                 std::cout << "Motor 3:\t" <<  motor_3 << std::endl;
 		std::cout << "Motor 4:\t" <<  motor_4 << std::endl;
 		std::cout << "Motor 5:\t" <<  motor_5 << std::endl;
 		std::cout << "Motor 6:\t" <<  motor_6 << std::endl;
+		*/
+
+		std::cout << "----------------------------------------------------" << std::endl;
+		std::cout << "Voltage for ADC 0: " << ADC::readVoltage(1) << std::endl;
+		std::cout << "Voltage for ADC 1: " << ADC::readVoltage(1) << std::endl;
+		std::cout << "Voltage for ADC 2: " << ADC::readVoltage(2) << std::endl;
+		std::cout << "Voltage for ADC 3: " << ADC::readVoltage(3) << std::endl;
+		std::cout << "Voltage for ADC 4: " << ADC::readVoltage(4) << std::endl;
+		std::cout << "Voltage for ADC 5: " << ADC::readVoltage(5) << std::endl;
+		std::cout << "Voltage for ADC 6: " << ADC::readVoltage(6) << std::endl;
+		
         }
     }
 

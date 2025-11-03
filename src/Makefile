@@ -3,8 +3,8 @@ CPPFLAGS = -O3 -DUSE_VOLK
 LDFLAGS = -lboost_program_options
 OBJDIR := ../build
 
-common_hdrs = Pwm.h
-OBJS = $(OBJDIR)/main.o $(OBJDIR)/Pwm.o
+common_hdrs = Adc.h
+OBJS = $(OBJDIR)/main.o $(OBJDIR)/Adc.o
 
 all: lab1
 
