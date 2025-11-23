@@ -1,0 +1,8 @@
+DTB = st7735r-lcd.dtbo
+DTS = BB-SPIDEV1-00A0.dtso
+all:
+	dtc -@ -I dts -O dtb -o BB-SPIDEV1-00A0.dtbo BB-SPIDEV1-00A0.dtso
+#
+#all:
+#	dtc -I dts -O dtb -o $(DTB) -b 0 -@ -i /usr/src/linux-headers-6.17.5-bone14/include $(DTS)
+#	sudo cp st7735r-lcd.dtbo /boot/dtbs/6.17.5-bone14/overlays/

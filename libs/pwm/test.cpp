@@ -9,7 +9,7 @@ int main() {
 
 
         // PWM0B → P9_22
-        PWM pwm22(pin_mapping.P9_22);
+        PWM pwm22(pin_mapping.P9_14);
 
         pwm22.setPeriod(1000000);      // 1 kHz
         pwm22.setDutyCycle(100000);    // 50%
@@ -17,7 +17,7 @@ int main() {
         pwm22.enable();
 
 
-	PWM pwm21(pin_mapping.P9_21);
+	PWM pwm21(pin_mapping.P9_16);
 	pwm21.setPeriod(1000000);      // 1 kHz
         pwm21.setDutyCycle(100000);    // 50%
         pwm21.setPolarity("normal");

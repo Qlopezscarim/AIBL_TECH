@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
 		*/
 
 		std::cout << "----------------------------------------------------" << std::endl;
-		std::cout << "Voltage for ADC 0: " << ADC::readVoltage(1) << std::endl;
+		std::cout << "Voltage for ADC 0: " << ADC::readVoltage(0) << std::endl;
 		std::cout << "Voltage for ADC 1: " << ADC::readVoltage(1) << std::endl;
 		std::cout << "Voltage for ADC 2: " << ADC::readVoltage(2) << std::endl;
 		std::cout << "Voltage for ADC 3: " << ADC::readVoltage(3) << std::endl;
