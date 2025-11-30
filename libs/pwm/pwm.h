@@ -26,10 +26,10 @@ struct pwm_paths
 	
 	std::string P9_22 = "/sys/class/pwm/pwmchip2/pwm0/"; //untested associations
         std::string P9_21 = "/sys/class/pwm/pwmchip2/pwm1/";
-        std::string P9_14 = "/sys/class/pwm/pwmchip0/pwm0/";
-        std::string P9_16 = "/sys/class/pwm/pwmchip0/pwm1/";
-        std::string P8_19 = "/sys/class/pwm/pwmchip1/pwm0/";
-        std::string P8_13 = "/sys/class/pwm/pwmchip1/pwm1/";
+        std::string P9_14 = "/sys/class/pwm/pwmchip0/pwm0/"; //Tested and confirmed alias for 6.17.5-bone14
+        std::string P9_16 = "/sys/class/pwm/pwmchip0/pwm1/"; //Tested and confirmed alias for 6.17.5-bone14
+        std::string P8_19 = "/sys/class/pwm/pwmchip1/pwm0/"; //Tested and confirmed alias for 6.17.5-bone14
+        std::string P8_13 = "/sys/class/pwm/pwmchip1/pwm1/"; //Tested and confirmed alias for 6.17.5-bone14
 };
 
 

@@ -1,0 +1,37 @@
+// SPDX-License-Identifier: GPL-2.0-only
+/*
+ * Copyright (C) 2025 Quintin Lopez-Scarim <Quintinlopezscarim2@gmail.com>
+ */
+
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/pinctrl/am33xx.h>
+
+/*
+ * Helper to show loaded overlays under: /proc/device-tree/chosen/overlays/
+ */
+&{/chosen} {
+	overlays {
+		BB-EHRPWM0-P9_21-P9_22.kernel = __TIMESTAMP__;
+	};
+};
+
+&am33xx_pinmux {
+	epwmss0_pins: pinmux_epwmss0_pins {
+		pinctrl-single,pins = <
+			AM33XX_PADCONF(AM335X_PIN_SPI0_D0, PIN_OUTPUT, MUX_MODE6) /* P9_14 (U14) gpmc_a2.ehrpwm1A */
+			AM33XX_PADCONF(AM335X_PIN_SPI0_SCLK, PIN_OUTPUT, MUX_MODE6) /* P9_16 (T14) gpmc_a3.ehrpwm1B */
+		>;
+	};
+};
+
+&epwmss0 {
+	status = "okay";
+};
+
+&ehrpwm0 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&epwmss0_pins>;
+};

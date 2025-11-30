@@ -7,28 +7,58 @@ int main() {
 	pwm_paths pin_mapping;
 
 
+	PWM pwm9_14(pin_mapping.P9_14);
 
-        // PWM0B → P9_22
-        PWM pwm22(pin_mapping.P9_14);
+        pwm9_14.setPeriod(1000000);      // 1 kHz
+        pwm9_14.setDutyCycle(100000);    // 50%
+        pwm9_14.setPolarity("normal");
+        pwm9_14.enable();
 
-        pwm22.setPeriod(1000000);      // 1 kHz
-        pwm22.setDutyCycle(100000);    // 50%
-        pwm22.setPolarity("normal");
-        pwm22.enable();
-
-
-	PWM pwm21(pin_mapping.P9_16);
-	pwm21.setPeriod(1000000);      // 1 kHz
-        pwm21.setDutyCycle(100000);    // 50%
-        pwm21.setPolarity("normal");
-        pwm21.enable();
-
-        std::cout << "PWM running on P9_22 and P9_21 Press Enter to stop." << std::endl;
+        std::cout << "PWM should be running on P9_14 press enter to test next connection." << std::endl;
         std::cin.get();
 
-        pwm22.disable();
-	pwm21.disable();
-        std::cout << "PWM stopped." << std::endl;
+        pwm9_14.disable();
+
+
+	PWM pwm9_16(pin_mapping.P9_16);
+
+        pwm9_16.setPeriod(1000000);      // 1 kHz
+        pwm9_16.setDutyCycle(100000);    // 50%
+        pwm9_16.setPolarity("normal");
+        pwm9_16.enable();
+
+        std::cout << "PWM should be running on P9_16 press enter to test next connection." << std::endl;
+        std::cin.get();
+
+        pwm9_16.disable();
+
+
+
+
+
+        PWM pwm8_13(pin_mapping.P8_13);
+
+        pwm8_13.setPeriod(1000000);      // 1 kHz
+        pwm8_13.setDutyCycle(100000);    // 50%
+        pwm8_13.setPolarity("normal");
+        pwm8_13.enable();
+
+	std::cout << "PWM should be running on P8_13 press enter to test next connection." << std::endl;
+        std::cin.get();
+
+	pwm8_13.disable();
+
+
+	PWM pwm8_19(pin_mapping.P8_19);
+	pwm8_19.setPeriod(1000000);      // 1 kHz
+        pwm8_19.setDutyCycle(100000);    // 50%
+        pwm8_19.setPolarity("normal");
+        pwm8_19.enable();
+
+	std::cout << "PWM should be running on P8_19 press enter to test next connection." << std::endl;
+        std::cin.get();
+
+	pwm8_19.disable();
     }
     catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;

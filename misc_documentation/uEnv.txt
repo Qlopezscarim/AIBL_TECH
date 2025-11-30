@@ -20,7 +20,7 @@ uboot_overlay_addr4=st7735r-lcd.dtbo
 #uboot_overlay_addr4=BB-SPIDEV1-00A0.dtbo
 uboot_overlay_addr5=BB-EHRPWM1-P9_14-P9_16.dtbo
 uboot_overlay_addr6=BB-EHRPWM2-P8_13-P8_19.dtbo
-#uboot_overlay_addr7=<file7>.dtbo
+uboot_overlay_addr7=BB-EHRPWM0-P9_21-P9_22.dtbo
 ###
 ###Custom Cape
 #dtb_overlay=<file8>.dtbo
