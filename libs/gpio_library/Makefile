@@ -2,7 +2,7 @@
 
 CC = gcc
 CFLAGS = -Wall -O2
-LDFLAGS = 
+LDFLAGS =
 
 # Library
 LIB = libbbgpio.a

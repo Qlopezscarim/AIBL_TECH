@@ -82,6 +82,25 @@ void PWM::writeToFile(const std::string& path, const std::string& value)
         }
 }
 
+std::string PWM::getPWMChipPath(const std::string& ehrpwm_name) {
+    std::string chipname_file = "/tmp/pwm-" + ehrpwm_name + ".chipname";
+    std::ifstream file(chipname_file);
+    
+    if (!file.is_open()) {
+        throw std::runtime_error("Could not open " + chipname_file);
+    }
+    
+    std::string chip;
+    std::getline(file, chip);
+    file.close();
+    
+    // Remove any trailing whitespace/newline
+    chip.erase(chip.find_last_not_of(" \n\r\t") + 1);
+    
+    return "/sys/class/pwm/" + chip;  // This should return: /sys/class/pwm/pwmchip2
+}
+
+
 
 bool PWM::pathExists(const std::string& path) {
     struct stat buffer;

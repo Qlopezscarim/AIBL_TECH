@@ -52,6 +52,9 @@ public:
 
     static void setPinPWM(const std::string& pin);
 
+    static std::string getPWMChipPath(const std::string& ehrpwm_name);
+
+
 
 private:
     std::string chip_path_;
