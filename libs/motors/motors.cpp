@@ -171,28 +171,28 @@ void Motors::motorFourDisable()
 void Motors::motorFiveForward()
 {
         gpio_high_45();
-	Motors::pwm9_22->setPeriod(1000000);      // 1 kHz
-        Motors::pwm9_22->setDutyCycle(100000);    // 50%
-        Motors::pwm9_22->setPolarity("normal");
-        Motors::pwm9_22->enable();
+	Motors::pwm9_21->setPeriod(1000000);      // 1 kHz
+        Motors::pwm9_21->setDutyCycle(100000);    // 50%
+        Motors::pwm9_21->setPolarity("normal");
+        Motors::pwm9_21->enable();
 
 }
 
 void Motors::motorFiveBackward()
 {
         gpio_low_45();
-	Motors::pwm9_22->setPeriod(1000000);      // 1 kHz
-        Motors::pwm9_22->setDutyCycle(100000);    // 50%
-        Motors::pwm9_22->setPolarity("normal");
-        Motors::pwm9_22->enable();
+	Motors::pwm9_21->setPeriod(1000000);      // 1 kHz
+        Motors::pwm9_21->setDutyCycle(100000);    // 50%
+        Motors::pwm9_21->setPolarity("normal");
+        Motors::pwm9_21->enable();
 
 }
 
 void Motors::motorFiveDisable()
 {
 
-        Motors::pwm9_22->setDutyCycle(0);    // 50%
-        Motors::pwm9_22->disable();
+        Motors::pwm9_21->setDutyCycle(0);    // 50%
+        Motors::pwm9_21->disable();
 }
 
 void Motors::motorSixForward()
